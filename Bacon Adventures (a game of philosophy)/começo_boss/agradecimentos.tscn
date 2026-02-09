@@ -1,0 +1,102 @@
+[gd_scene load_steps=6 format=3 uid="uid://cra2nbbeh6b3j"]
+
+[ext_resource type="FontFile" uid="uid://bumr1aadkp1j7" path="res://assets/Sprite Pack 2/Bacon pack/die animation - bacon adventures/alagard.ttf" id="1_ule6r"]
+[ext_resource type="Script" uid="uid://b5epi2o3x7gvy" path="res://agradecimentos.gd" id="1_v4w3y"]
+
+[sub_resource type="Animation" id="Animation_h8ppp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_v4w3y"]
+resource_name = "fade"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.5333333, 4.0666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label2:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4.0666666, 6.9333334, 7.9333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s1s8a"]
+_data = {
+&"RESET": SubResource("Animation_h8ppp"),
+&"fade": SubResource("Animation_v4w3y")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_v4w3y")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 651.0
+offset_bottom = 365.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 163.0
+offset_right = 529.0
+offset_bottom = 230.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ule6r")
+theme_override_font_sizes/font_size = 27
+text = "Próxima atualização em breve!
+"
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 177.0
+offset_right = 435.0
+offset_bottom = 202.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_ule6r")
+theme_override_font_sizes/font_size = 26
+text = "Obrigado por jogar!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_s1s8a")
+}
+autoplay = "fade"

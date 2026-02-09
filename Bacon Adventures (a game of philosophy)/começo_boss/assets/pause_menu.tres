@@ -1,0 +1,28 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://c8oxqnc08gxbn"]
+
+[ext_resource type="FontFile" uid="uid://pw06yxvtmv8t" path="res://fonts/RevMiniPixel.ttf" id="1_f3887"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7pn1s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gsbrd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dku4i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1howk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56d2j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_152db"]
+
+[resource]
+Button/colors/font_focus_color = Color(1, 1, 0, 1)
+Button/colors/font_hover_color = Color(1, 1, 0, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 0, 1)
+Button/colors/font_pressed_color = Color(1, 0.521569, 0, 1)
+Button/fonts/font = ExtResource("1_f3887")
+Button/styles/disabled = SubResource("StyleBoxEmpty_7pn1s")
+Button/styles/disabled_mirrored = SubResource("StyleBoxEmpty_gsbrd")
+Button/styles/focus = SubResource("StyleBoxEmpty_dku4i")
+Button/styles/hover = SubResource("StyleBoxEmpty_1howk")
+Button/styles/hover_mirrored = SubResource("StyleBoxEmpty_56d2j")
+Button/styles/hover_pressed = SubResource("StyleBoxEmpty_152db")

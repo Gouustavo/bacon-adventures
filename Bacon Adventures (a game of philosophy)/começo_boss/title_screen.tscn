@@ -1,0 +1,258 @@
+[gd_scene load_steps=27 format=3 uid="uid://bo4g01cdl07g8"]
+
+[ext_resource type="Script" uid="uid://bktvlmafa7554" path="res://title_screen.gd" id="1_aopix"]
+[ext_resource type="Texture2D" uid="uid://dfwctkw3yhofp" path="res://ChatGPT Image 11 de nov. de 2025, 20_14_45.png" id="2_ig5kc"]
+[ext_resource type="FontFile" uid="uid://dk2on0kx3roej" path="res://fonts/Minecraft.ttf" id="3_ig5kc"]
+
+[sub_resource type="GDScript" id="GDScript_ktofn"]
+script/source = "\"res://assets/Sprite Pack 2/Bacon pack/die animation - bacon adventures/CHOPS___.TTF\"
+"
+
+[sub_resource type="FontFile" id="FontFile_8wbim"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+script = SubResource("GDScript_ktofn")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ugutt"]
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egqa0"]
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1iva"]
+bg_color = Color(0.556624, 0.651341, 0.0761515, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 9.0
+expand_margin_top = 5.0
+expand_margin_right = 9.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04u7o"]
+bg_color = Color(0, 0.362416, 0.67392, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="Theme" id="Theme_iysxj"]
+Button/colors/font_color = Color(1, 0.92549, 0.909804, 1)
+Button/colors/icon_normal_color = Color(0.897757, 0.927386, 0.938283, 1)
+Button/fonts/font = SubResource("FontFile_8wbim")
+Button/styles/hover = SubResource("StyleBoxFlat_ugutt")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_egqa0")
+Button/styles/normal = SubResource("StyleBoxFlat_x1iva")
+Button/styles/pressed = SubResource("StyleBoxFlat_04u7o")
+
+[sub_resource type="FontFile" id="FontFile_qayyg"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ix3fy"]
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfch7"]
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sr4sh"]
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_568xx"]
+bg_color = Color(0.196594, 0.329742, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r3s33"]
+bg_color = Color(0, 0.360784, 0.67451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="Theme" id="Theme_kp70x"]
+Button/colors/font_color = Color(0.999674, 0.923995, 0.911018, 1)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/font_sizes/font_size = 16
+Button/fonts/font = SubResource("FontFile_qayyg")
+Button/styles/focus = SubResource("StyleBoxFlat_ix3fy")
+Button/styles/hover = SubResource("StyleBoxFlat_qfch7")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_sr4sh")
+Button/styles/normal = SubResource("StyleBoxFlat_568xx")
+Button/styles/pressed = SubResource("StyleBoxFlat_r3s33")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig5kc"]
+bg_color = Color(0.8588482, 0.49993628, 0.05145984, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 8.0
+expand_margin_top = 2.0
+expand_margin_right = 8.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hafda"]
+expand_margin_left = 8.0
+expand_margin_top = 2.0
+expand_margin_right = 8.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05l2w"]
+expand_margin_left = 8.0
+expand_margin_top = 2.0
+expand_margin_right = 8.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpml5"]
+expand_margin_left = 8.0
+expand_margin_top = 2.0
+expand_margin_right = 8.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ckrn"]
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xect6"]
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0pphv"]
+bg_color = Color(0.763515, 0, 0.126773, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_624uy"]
+bg_color = Color(0, 0.360784, 0.67451, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 8.0
+expand_margin_right = 8.0
+
+[sub_resource type="Theme" id="Theme_peu7p"]
+Button/colors/font_color = Color(1, 0.92549, 0.909804, 1)
+Button/styles/focus = SubResource("StyleBoxFlat_8ckrn")
+Button/styles/hover = SubResource("StyleBoxFlat_xect6")
+Button/styles/normal = SubResource("StyleBoxFlat_0pphv")
+Button/styles/pressed = SubResource("StyleBoxFlat_624uy")
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aopix")
+
+[node name="bg" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 649.0
+offset_bottom = 367.0
+texture = ExtResource("2_ig5kc")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = 156.0
+offset_right = 9.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="start_buttom" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_iysxj")
+theme_override_fonts/font = ExtResource("3_ig5kc")
+text = "START
+"
+
+[node name="start_buttom2" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_kp70x")
+theme_override_fonts/font = ExtResource("3_ig5kc")
+text = "CREDITS
+"
+
+[node name="start_buttom4" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ig5kc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig5kc")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_hafda")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_05l2w")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tpml5")
+text = "Settings"
+
+[node name="start_buttom3" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_peu7p")
+theme_override_fonts/font = ExtResource("3_ig5kc")
+theme_override_font_sizes/font_size = 16
+text = "QUIT GAME
+"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_buttom" to="." method="_on_start_buttom_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_buttom2" to="." method="_on_start_buttom_2_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_buttom4" to="." method="_on_start_buttom_4_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/start_buttom3" to="." method="_on_start_buttom_3_pressed"]

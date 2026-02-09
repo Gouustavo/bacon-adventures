@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cee7butd0n4i5"]
+
+[sub_resource type="GDScript" id="GDScript_xrojb"]
+script/source = "extends Area2D
+
+func _ready():
+	add_to_group(\"player\")
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"player\"):
+		print(body.name)
+"
+
+[node name="hitbox" type="Area2D"]
+collision_layer = 16
+script = SubResource("GDScript_xrojb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

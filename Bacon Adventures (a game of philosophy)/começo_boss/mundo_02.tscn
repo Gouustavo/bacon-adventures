@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2rpbd3s4kib6"]
+
+[ext_resource type="PackedScene" uid="uid://mbc1pjaayx8u" path="res://levels/mundo_02.tscn" id="1_a1v74"]
+[ext_resource type="PackedScene" uid="uid://dhdfvnths78bu" path="res://Personagem cachorro.tscn" id="2_bmasv"]
+
+[node name="mundo_02" instance=ExtResource("1_a1v74")]
+
+[node name="CharacterBody2D" parent="." index="14" instance=ExtResource("2_bmasv")]
+position = Vector2(-1025, 223)

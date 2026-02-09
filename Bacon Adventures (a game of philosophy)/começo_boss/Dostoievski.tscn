@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b0vbd17k3xwqe"]
+
+[ext_resource type="Texture2D" uid="uid://c4x4751ini2sk" path="res://aristóteles/New Piskel (3).png" id="1_ersp1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klgxe"]
+atlas = ExtResource("1_ersp1")
+region = Rect2(0, 0, 60, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8h47"]
+atlas = ExtResource("1_ersp1")
+region = Rect2(0, 60, 60, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l61sl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klgxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8h47")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(248.5, 57)
+scale = Vector2(5.2166667, 3.5333333)
+sprite_frames = SubResource("SpriteFrames_l61sl")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.88376075

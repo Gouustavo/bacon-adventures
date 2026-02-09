@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv0qhciuht5w8"]
+
+[ext_resource type="Texture2D" uid="uid://fxt7d6mey153" path="res://Tomas de Aquino.png" id="1_ae4ni"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v58ji"]
+atlas = ExtResource("1_ae4ni")
+region = Rect2(0, 0, 50, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6cap"]
+atlas = ExtResource("1_ae4ni")
+region = Rect2(50, 0, 50, 60)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fs0jc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v58ji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6cap")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(54.5, 96.75)
+scale = Vector2(1.42, 1.2249999)
+sprite_frames = SubResource("SpriteFrames_fs0jc")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.27956805

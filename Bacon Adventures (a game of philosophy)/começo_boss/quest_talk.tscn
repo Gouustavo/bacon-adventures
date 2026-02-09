@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://dewc3s6yklhvi"]
+
+[ext_resource type="Script" uid="uid://db68u5jphi0il" path="res://quest_talk.gd" id="1_sqepf"]
+[ext_resource type="Texture2D" uid="uid://3gkku0tdvc5m" path="res://box_of_message-removebg-preview.png" id="1_x7xkb"]
+[ext_resource type="FontFile" uid="uid://bumr1aadkp1j7" path="res://assets/Sprite Pack 2/Bacon pack/die animation - bacon adventures/alagard.ttf" id="3_nxjnw"]
+
+[node name="Questpopup" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = -6.0
+offset_right = 44.0
+offset_bottom = 34.0
+scale = Vector2(0.7927425, 0.92346495)
+script = ExtResource("1_sqepf")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = -29.0
+offset_top = 97.0
+offset_right = 536.0
+offset_bottom = 330.0
+scale = Vector2(0.8646982, 0.8332209)
+texture = ExtResource("1_x7xkb")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+modulate = Color(0, 0, 0, 1)
+texture_filter = 2
+offset_left = 34.000004
+offset_top = 139.0
+offset_right = 464.0
+offset_bottom = 246.0
+scale = Vector2(0.8646982, 0.8332209)
+theme_override_fonts/font = ExtResource("3_nxjnw")
+theme_override_font_sizes/font_size = 21
+text = "Depois de tudo o que você enfrentou…
+o que mais mudou: o mundo ao seu redor, 
+ou quem você se tornou durante o caminho?
+"
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_left = 251.0
+offset_top = 216.99998
+offset_right = 397.0
+offset_bottom = 248.99998
+scale = Vector2(0.8646982, 0.8332209)
+theme_override_fonts/font = ExtResource("3_nxjnw")
+theme_override_font_sizes/font_size = 23
+text = "b) Eu mesmo"
+
+[node name="Button2" type="Button" parent="CanvasLayer"]
+offset_left = 57.0
+offset_top = 217.0
+offset_right = 187.0
+offset_bottom = 248.0
+scale = Vector2(0.8646982, 0.8332209)
+theme_override_fonts/font = ExtResource("3_nxjnw")
+theme_override_font_sizes/font_size = 23
+text = "a) O mundo"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button2" to="." method="_on_button_2_pressed"]

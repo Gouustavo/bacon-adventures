@@ -1,0 +1,64 @@
+[gd_scene load_steps=13 format=3 uid="uid://bkyaick3opooj"]
+
+[ext_resource type="Texture2D" uid="uid://dd6olam8x0ykv" path="res://arrows/A buttom.png" id="1_6hcgb"]
+[ext_resource type="Texture2D" uid="uid://bmt1ubr4d0agh" path="res://arrows/A buttom pressed.png" id="2_ywmn5"]
+[ext_resource type="Texture2D" uid="uid://oqae234nqwp7" path="res://arrows/D buttom.png" id="3_6hcgb"]
+[ext_resource type="Texture2D" uid="uid://dvhsuif7g2mcw" path="res://arrows/D buttom pressed.png" id="4_ywmn5"]
+[ext_resource type="Texture2D" uid="uid://ck02mbltswko7" path="res://arrows/W buttom.png" id="5_8r61i"]
+[ext_resource type="Texture2D" uid="uid://b7dninkbnd6mk" path="res://arrows/W buttom pressed.png" id="6_l5hac"]
+[ext_resource type="Texture2D" uid="uid://b5i0cgl1wp2q7" path="res://arrows/interact_base.png" id="7_6hcgb"]
+[ext_resource type="Texture2D" uid="uid://sh0d86oxiu2q" path="res://arrows/interact_pressed_resized (1).png" id="8_ywmn5"]
+[ext_resource type="Texture2D" uid="uid://cfyuj0eqmtmsf" path="res://arrows/next (1).png" id="9_6hcgb"]
+[ext_resource type="Texture2D" uid="uid://cy7a3so8k0oqy" path="res://arrows/next_pressed (1).png" id="10_ywmn5"]
+[ext_resource type="Texture2D" uid="uid://brsxxyxhlndql" path="res://arrows/Settings.png" id="11_8r61i"]
+[ext_resource type="Texture2D" uid="uid://bgon3xky2docu" path="res://arrows/settings pressed.png" id="12_l5hac"]
+
+[node name="controls" type="CanvasLayer"]
+
+[node name="ui_left" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.38700002)
+position = Vector2(9, 307)
+scale = Vector2(4, 3.125)
+texture_normal = ExtResource("1_6hcgb")
+texture_pressed = ExtResource("2_ywmn5")
+action = "mover_esquerda"
+
+[node name="ui_right" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.28100002)
+position = Vector2(89, 305)
+scale = Vector2(4, 3.1875)
+texture_normal = ExtResource("3_6hcgb")
+texture_pressed = ExtResource("4_ywmn5")
+action = "mover_direita"
+
+[node name="ui_up" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.35300002)
+position = Vector2(459, 304.99997)
+scale = Vector2(3.92308, 3.125)
+texture_normal = ExtResource("5_8r61i")
+texture_pressed = ExtResource("6_l5hac")
+action = "mover_cima"
+
+[node name="interact" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.18300001)
+position = Vector2(530, 310)
+scale = Vector2(0.131213, 0.129901)
+texture_normal = ExtResource("7_6hcgb")
+texture_pressed = ExtResource("8_ywmn5")
+action = "interact"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.171)
+position = Vector2(539, 257)
+scale = Vector2(0.12367, 0.108168)
+texture_normal = ExtResource("9_6hcgb")
+texture_pressed = ExtResource("10_ywmn5")
+action = "advance"
+
+[node name="settings" type="TouchScreenButton" parent="."]
+modulate = Color(1, 1, 1, 0.558)
+position = Vector2(13, 14)
+scale = Vector2(3.53846, 2.9375)
+texture_normal = ExtResource("11_8r61i")
+texture_pressed = ExtResource("12_l5hac")
+action = "ui_cancel"

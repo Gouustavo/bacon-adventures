@@ -1,0 +1,221 @@
+[gd_scene load_steps=13 format=3 uid="uid://dviurvcot8ux8"]
+
+[ext_resource type="Script" uid="uid://l8cfp1lndewt" path="res://scripts/enemy.gd" id="1_t1ujs"]
+[ext_resource type="Texture2D" uid="uid://duusobrviiih6" path="res://assets/Sprite Pack 2/Bacon pack/4 - Robo Pumpkin/Walking (16 x 16).png" id="2_wvybr"]
+[ext_resource type="Texture2D" uid="uid://d02ksa27itv4l" path="res://assets/Sprite Pack 2/Bacon pack/4 - Robo Pumpkin/Hurt (16 x 16).png" id="3_n2fa0"]
+[ext_resource type="Texture2D" uid="uid://j61y1yrodr7d" path="res://assets/Sprite Pack 2/Bacon pack/4 - Robo Pumpkin/Standing (16 x 16).png" id="4_tsku7"]
+[ext_resource type="PackedScene" uid="uid://blmqo1kxwdly4" path="res://players/hitbox.tscn" id="5_wvybr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n2fa0"]
+radius = 3.99999
+height = 15.9965
+
+[sub_resource type="Animation" id="Animation_ugort"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_wvybr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_hg7fd"]
+resource_name = "hurt"
+length = 0.1
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_n2fa0")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_4x4wt"]
+resource_name = "standing"
+length = 0.1
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_tsku7")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ejere"]
+resource_name = "walk"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_wvybr")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sta3w"]
+_data = {
+&"RESET": SubResource("Animation_ugort"),
+&"hurt": SubResource("Animation_hg7fd"),
+&"standing": SubResource("Animation_4x4wt"),
+&"walk": SubResource("Animation_ejere")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jle2j"]
+size = Vector2(46, 36)
+
+[node name="enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_t1ujs")
+
+[node name="texture" type="Sprite2D" parent="."]
+position = Vector2(9, -7)
+texture = ExtResource("2_wvybr")
+hframes = 2
+
+[node name="collision" type="CollisionShape2D" parent="."]
+position = Vector2(9, -4)
+rotation = -1.56905
+shape = SubResource("CapsuleShape2D_n2fa0")
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_sta3w")
+}
+autoplay = "walk"
+speed_scale = 0.5
+
+[node name="wall_detector" type="RayCast2D" parent="."]
+position = Vector2(5, -4)
+target_position = Vector2(-7, 0)
+collision_mask = 4
+
+[node name="hitbox" parent="." instance=ExtResource("5_wvybr")]
+position = Vector2(7, -9)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_jle2j")
+debug_color = Color(1, 0.00895287, 0.0391134, 0.42)
+
+[connection signal="body_entered" from="hitbox" to="hitbox" method="_on_body_entered"]

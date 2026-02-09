@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkysvx27u81hr"]
+
+[ext_resource type="Script" uid="uid://c37ce5k5iuucu" path="res://scripts/moving_platform.gd" id="1_hrpga"]
+[ext_resource type="Texture2D" uid="uid://b8qdfvjqam5oy" path="res://assets/Seasonal Tilesets/Seasonal Tilesets/5 - Misc. universal tiles/Blocks (16 x 16).png" id="2_f8lbu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oaxfr"]
+size = Vector2(30, 15)
+
+[node name="moving_platform" type="Node2D"]
+script = ExtResource("1_hrpga")
+
+[node name="platform" type="AnimatableBody2D" parent="."]
+collision_layer = 2
+collision_mask = 9
+
+[node name="sprite_platform" type="Sprite2D" parent="platform"]
+texture = ExtResource("2_f8lbu")
+region_enabled = true
+region_rect = Rect2(96, 64, 32, 16)
+
+[node name="Collision" type="CollisionShape2D" parent="platform"]
+shape = SubResource("RectangleShape2D_oaxfr")
+one_way_collision = true

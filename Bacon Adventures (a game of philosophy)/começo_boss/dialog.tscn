@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3g1b12p2f03q"]
+
+[ext_resource type="Script" uid="uid://x4fwtjaeo7j0" path="res://dialog.gd" id="1_jj8mu"]
+[ext_resource type="Texture2D" uid="uid://3gkku0tdvc5m" path="res://box_of_message-removebg-preview.png" id="2_w7j6r"]
+[ext_resource type="FontFile" uid="uid://cajarouwnb44m" path="res://fonte2.ttf" id="3_w7j6r"]
+[ext_resource type="Script" uid="uid://c02v1dv8pkxo2" path="res://text_label.gd" id="4_4uc3s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7j6r"]
+
+[node name="dialog" type="MarginContainer"]
+anchors_preset = -1
+anchor_top = 0.294
+anchor_bottom = 0.294
+offset_left = -12.0
+offset_top = 115.69
+offset_right = 635.01715
+offset_bottom = 275.72614
+scale = Vector2(0.797506, 1.01852)
+script = ExtResource("1_jj8mu")
+
+[node name="background" type="NinePatchRect" parent="."]
+layout_mode = 2
+texture = ExtResource("2_w7j6r")
+region_rect = Rect2(0, -8, 464, 176)
+
+[node name="label_margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = -17
+theme_override_constants/margin_right = 21
+theme_override_constants/margin_bottom = 6
+
+[node name="text_label" type="Label" parent="label_margin"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.7919991, 0.79199916, 0.7919991, 1)
+theme_override_fonts/font = ExtResource("3_w7j6r")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxEmpty_w7j6r")
+text = "erggg"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("4_4uc3s")
+
+[node name="letter" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="letter" to="." method="_on_letter_timeout"]

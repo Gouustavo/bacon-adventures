@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://bk22q85pfexjl"]
+
+[ext_resource type="Script" uid="uid://fygysq7kpdmv" path="res://transition_world_03.gd" id="1_gykmv"]
+[ext_resource type="FontFile" uid="uid://bumr1aadkp1j7" path="res://assets/Sprite Pack 2/Bacon pack/die animation - bacon adventures/alagard.ttf" id="1_o3u70"]
+[ext_resource type="Texture2D" uid="uid://ccgxpuws6b8d2" path="res://frasco xp 3.png" id="3_5yl3u"]
+
+[sub_resource type="Animation" id="Animation_5yl3u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texto:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gykmv"]
+resource_name = "play_anim"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texto:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666668, 1.1, 2.2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.06100855, 0.06100855, 0.06100855, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.9333334, 5.9333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.30992734, 0.51646477, 0.13820577, 0), Color(0.3836984, 0.50915295, 0.12522537, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.9333334, 5.9333334),
+"transitions": PackedFloat32Array(1.035265, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5k7j5"]
+_data = {
+&"RESET": SubResource("Animation_5yl3u"),
+&"play_anim": SubResource("Animation_gykmv")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_gykmv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Texto" type="Label" parent="."]
+offset_left = 137.0
+offset_top = 130.0
+offset_right = 523.0
+offset_bottom = 223.0
+theme_override_colors/font_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
+theme_override_fonts/font = ExtResource("1_o3u70")
+theme_override_font_sizes/font_size = 33
+text = "Filosofia Contemporânea 
+  (Final do século XVIII)"
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 215.0
+offset_top = 112.0
+offset_right = 438.0
+offset_bottom = 141.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_o3u70")
+theme_override_font_sizes/font_size = 21
+text = "Nível de conhecimento:"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320.125, 224.62502)
+scale = Vector2(5.1171865, 4.3515635)
+texture = ExtResource("3_5yl3u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_5k7j5")
+}

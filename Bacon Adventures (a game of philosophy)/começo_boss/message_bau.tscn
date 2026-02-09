@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqp37kgry3x2n"]
+
+[ext_resource type="Texture2D" uid="uid://xhk451nlq77b" path="res://arrows/oper paper.png" id="1_qh2qi"]
+[ext_resource type="FontFile" uid="uid://dk2on0kx3roej" path="res://fonts/Minecraft.ttf" id="2_4h03p"]
+
+[sub_resource type="Theme" id="Theme_gb4d1"]
+default_font = ExtResource("2_4h03p")
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 45.0
+offset_top = -48.0
+offset_right = 3514.0
+offset_bottom = 3135.0
+scale = Vector2(0.159999, 0.14201)
+texture = ExtResource("1_qh2qi")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 213.0
+offset_top = 99.0
+offset_right = 464.0
+offset_bottom = 122.0
+theme = SubResource("Theme_gb4d1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Pegue no meu pau e pede bença"
+
+[node name="Button" type="Button" parent="."]
+offset_left = 214.0
+offset_top = 259.0
+offset_right = 283.0
+offset_bottom = 280.0
+theme_override_fonts/font = ExtResource("2_4h03p")
+text = "sair"

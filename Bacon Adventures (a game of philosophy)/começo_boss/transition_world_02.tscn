@@ -1,0 +1,132 @@
+[gd_scene load_steps=8 format=3 uid="uid://0vfqup2nwov2"]
+
+[ext_resource type="Script" uid="uid://dxm4id8fcrqcd" path="res://transition_world_02.gd" id="1_wyu28"]
+[ext_resource type="FontFile" uid="uid://bumr1aadkp1j7" path="res://assets/Sprite Pack 2/Bacon pack/die animation - bacon adventures/alagard.ttf" id="2_daemm"]
+[ext_resource type="Texture2D" uid="uid://6jibo0wm8xsy" path="res://frasco de xp2.png" id="3_53mk2"]
+[ext_resource type="Script" uid="uid://dt7qqe7tdp151" path="res://animation_player.gd" id="4_8etuj"]
+
+[sub_resource type="Animation" id="Animation_wyu28"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texto:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_daemm"]
+resource_name = "play_anim"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texto:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666668, 0.73333335, 1.8333334, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0.27395758, 0.27395758, 0.27395758, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.7666667, 4.366667, 6.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.28493494, 0.60718703, 0.07016479, 0), Color(0.28493494, 0.60718703, 0.07016479, 0.78400004), Color(0.2610881, 0.5827791, 0.2973882, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.7666667, 3.8, 6.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_53mk2"]
+_data = {
+&"RESET": SubResource("Animation_wyu28"),
+&"play_anim": SubResource("Animation_daemm")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_wyu28")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 650.0
+offset_bottom = 365.0
+color = Color(0, 0, 0, 1)
+
+[node name="Texto" type="Label" parent="."]
+offset_left = 102.0
+offset_top = 144.0
+offset_right = 559.0
+offset_bottom = 204.0
+theme_override_fonts/font = ExtResource("2_daemm")
+theme_override_font_sizes/font_size = 27
+text = "Filosofia Medieval (Séc. V – Séc. XV)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 214.0
+offset_top = 107.0
+offset_right = 437.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_daemm")
+theme_override_font_sizes/font_size = 21
+text = "Nível de conhecimento:"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(319, 218.00002)
+scale = Vector2(4.687501, 4.5312505)
+texture = ExtResource("3_53mk2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_53mk2")
+}
+speed_scale = 0.637
+script = ExtResource("4_8etuj")

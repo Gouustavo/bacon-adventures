@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=3 uid="uid://1b8otxe7ueba"]
+
+[ext_resource type="Texture2D" uid="uid://c2n4qb4ujjd46" path="res://assets/Pixel Adventure 1/Free/Traps/Falling Platforms/Off.png" id="1_bnmda"]
+[ext_resource type="Script" uid="uid://dcd2d2vvafd0e" path="res://scripts/falling_platform.gd" id="1_bux0c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bux0c"]
+size = Vector2(33.5, 15)
+
+[sub_resource type="Animation" id="Animation_yu2cv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_l2od7"]
+resource_name = "shake"
+length = 0.46
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.11073, 0.219782, 0.312056, 0.416075),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0), Vector2(0.6, 0), Vector2(0, 0), Vector2(-0.6, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_suobm"]
+_data = {
+&"RESET": SubResource("Animation_yu2cv"),
+&"shake": SubResource("Animation_l2od7")
+}
+
+[node name="falling_platform" type="AnimatableBody2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_bux0c")
+
+[node name="texture" type="Sprite2D" parent="."]
+texture = ExtResource("1_bnmda")
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_bux0c")
+one_way_collision = true
+
+[node name="respaw_timer" type="Timer" parent="."]
+
+[node name="anim" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_suobm")
+}
+
+[connection signal="timeout" from="respaw_timer" to="." method="_on_respaw_timer_timeout"]
+[connection signal="animation_finished" from="anim" to="." method="_on_anim_animation_finished"]

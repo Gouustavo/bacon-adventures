@@ -1,0 +1,137 @@
+[gd_scene load_steps=11 format=3 uid="uid://0joj55grf1if"]
+
+[ext_resource type="Script" uid="uid://f768wrapxg1w" path="res://settings.gd" id="1_bvb5x"]
+[ext_resource type="Texture2D" uid="uid://b5i0cgl1wp2q7" path="res://arrows/interact_base.png" id="2_2fv1l"]
+[ext_resource type="FontFile" uid="uid://pw06yxvtmv8t" path="res://fonts/RevMiniPixel.ttf" id="2_8uskx"]
+[ext_resource type="FontFile" uid="uid://dk2on0kx3roej" path="res://fonts/Minecraft.ttf" id="3_sfvul"]
+[ext_resource type="Texture2D" uid="uid://cfyuj0eqmtmsf" path="res://arrows/next (1).png" id="4_blqn1"]
+[ext_resource type="Texture2D" uid="uid://brsxxyxhlndql" path="res://arrows/Settings.png" id="5_j7x76"]
+[ext_resource type="Texture2D" uid="uid://oqae234nqwp7" path="res://arrows/D buttom.png" id="6_71mvm"]
+[ext_resource type="Texture2D" uid="uid://dd6olam8x0ykv" path="res://arrows/A buttom.png" id="7_8uskx"]
+[ext_resource type="Texture2D" uid="uid://ck02mbltswko7" path="res://arrows/W buttom.png" id="8_xffxv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jrv5e"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 2
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 652.0
+offset_bottom = 364.0
+script = ExtResource("1_bvb5x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 650.0
+offset_bottom = 364.0
+color = Color(0.081, 0.081, 0.081, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 559.0
+offset_top = 323.0
+offset_right = 631.0
+offset_bottom = 354.0
+theme_override_fonts/font = ExtResource("2_8uskx")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jrv5e")
+text = "quit"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 928.0
+offset_bottom = 405.0
+scale = Vector2(0.11583, 0.147484)
+texture = ExtResource("2_2fv1l")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 127.0
+offset_top = 32.0
+offset_right = 404.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("3_sfvul")
+text = "Interact Buttom - Tecla \"P\""
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 132.0
+offset_top = 104.0
+offset_right = 417.0
+offset_bottom = 127.0
+theme_override_fonts/font = ExtResource("3_sfvul")
+text = "Next Buttom - Tecla \"O\"."
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 135.0
+offset_top = 172.0
+offset_right = 424.0
+offset_bottom = 201.0
+theme_override_fonts/font = ExtResource("3_sfvul")
+text = "Botão Pause - Tecla \"Esc\"."
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 277.0
+offset_right = 423.0
+offset_bottom = 300.0
+theme_override_fonts/font = ExtResource("3_sfvul")
+text = "Movement - Autoexplicativo. \"W, A, D\"."
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 77.0
+offset_right = 870.0
+offset_bottom = 530.0
+scale = Vector2(0.11583, 0.147484)
+texture = ExtResource("4_blqn1")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 156.0
+offset_right = 661.0
+offset_bottom = 582.0
+scale = Vector2(0.11583, 0.147484)
+texture = ExtResource("5_j7x76")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 280.0
+offset_right = 502.0
+offset_bottom = 570.0
+scale = Vector2(0.11583, 0.147484)
+texture = ExtResource("6_71mvm")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 278.0
+offset_right = 392.0
+offset_bottom = 588.0
+scale = Vector2(0.11583, 0.147484)
+texture = ExtResource("7_8uskx")
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 242.0
+offset_right = 459.0
+offset_bottom = 559.0
+scale = Vector2(0.11583, 0.147484)
+texture = ExtResource("8_xffxv")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvnljyyq1qn5s"]
+
+[ext_resource type="Texture2D" uid="uid://omm30bjgcf34" path="res://Chaves.png" id="1_jquyr"]
+[ext_resource type="Script" uid="uid://defc1qcmmpbuc" path="res://chave_para_mundo_3.gd" id="1_nxase"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nxase"]
+radius = 12.0416
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f377l"]
+atlas = ExtResource("1_jquyr")
+region = Rect2(0, 20, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfd4k"]
+atlas = ExtResource("1_jquyr")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dppcf"]
+atlas = ExtResource("1_jquyr")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rba7v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f377l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfd4k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dppcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfd4k")
+}],
+"loop": true,
+"name": &"coin",
+"speed": 6.0
+}]
+
+[node name="Area2D" type="Area2D"]
+position = Vector2(81, 56)
+script = ExtResource("1_nxase")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nxase")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-2.38419e-07, -1)
+scale = Vector2(1.25, 1.2)
+sprite_frames = SubResource("SpriteFrames_rba7v")
+animation = &"coin"
+autoplay = "coin"
+frame_progress = 0.21099
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

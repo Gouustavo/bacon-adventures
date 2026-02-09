@@ -1,0 +1,160 @@
+[gd_scene load_steps=7 format=3 uid="uid://djb665u483ih6"]
+
+[ext_resource type="Script" uid="uid://pngmdmiybvi5" path="res://canvas_layer.gd" id="1_fry6t"]
+[ext_resource type="FontFile" uid="uid://bumr1aadkp1j7" path="res://assets/Sprite Pack 2/Bacon pack/die animation - bacon adventures/alagard.ttf" id="2_fry6t"]
+[ext_resource type="Texture2D" uid="uid://c7gmosoxxypmh" path="res://frasco de xp.png" id="3_rtmu0"]
+
+[sub_resource type="Animation" id="Animation_fry6t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texto:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texto:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Filosofia Antiga (séc. VI a.C. – séc. V d.C.)"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m057w"]
+resource_name = "intro_anim"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texto:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.93333334, 1.4333333, 2.3333333, 2.9333334),
+"transitions": PackedFloat32Array(1, 0.99999934, 0.99999934, 1, 1, 1),
+"update": 0,
+"values": [Color(0.17641911, 0.17641908, 0.17641908, 1), Color(0.41981313, 0.41981313, 0.41981304, 1), Color(0.7288223, 0.7288219, 0.7288219, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Texto:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.79),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Filosofia Antiga (séc. VI a.C. – séc. V d.C.)"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.0333333, 5.5666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.19376397, 0.55827224, 0.27721363, 0), Color(0.33552897, 0.67329913, 0.2764516, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(3.0333333, 4.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fgdh4"]
+_data = {
+&"RESET": SubResource("Animation_fry6t"),
+&"intro_anim": SubResource("Animation_m057w")
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_fry6t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 650.0
+offset_bottom = 365.0
+color = Color(0, 0, 0, 1)
+
+[node name="Texto" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.0
+offset_top = -16.5
+offset_right = 245.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_fry6t")
+theme_override_font_sizes/font_size = 25
+text = "Filosofia Antiga (séc. VI a.C. – séc. V d.C.)"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 215.0
+offset_top = 111.0
+offset_right = 438.0
+offset_bottom = 140.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_fry6t")
+theme_override_font_sizes/font_size = 21
+text = "Nível de conhecimento:"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(321, 218)
+scale = Vector2(4.277344, 4.4140625)
+texture = ExtResource("3_rtmu0")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fgdh4")
+}
+speed_scale = 0.938
